@@ -25,11 +25,10 @@ export default function Conversation({
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages]);
 
-  function submit(e: React.FormEvent) {
-    e.preventDefault();
-    const text = draft.trim();
-    if (!text) return;
-    onSend(text);
+  function submit(text: string) {
+    const trimmed = text.trim();
+    if (!trimmed) return;
+    onSend(trimmed);
     setDraft("");
   }
 
@@ -102,7 +101,13 @@ export default function Conversation({
         </p>
       )}
 
-      <form onSubmit={submit} className="flex gap-2 px-4 pb-3">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submit(draft);
+        }}
+        className="flex gap-2 px-4 pb-3"
+      >
         <label htmlFor="chat-input" className="sr-only">
           Type a message
         </label>

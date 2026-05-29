@@ -17,7 +17,7 @@ export interface VadOptions {
 
 export class VoiceActivityDetector {
   private analyser: AnalyserNode;
-  private buffer: Float32Array;
+  private buffer: Float32Array<ArrayBuffer>;
   private raf = 0;
   private speaking = false;
   private lastVoiceTs = 0;

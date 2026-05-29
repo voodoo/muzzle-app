@@ -67,7 +67,7 @@ export class WhisperCapture {
   private recorder: MediaRecorder | null = null;
   private chunks: Blob[] = [];
   private levelRaf = 0;
-  private levelBuffer: Float32Array;
+  private levelBuffer: Float32Array<ArrayBuffer>;
   private readonly onLevel?: (rms: number) => void;
 
   constructor(
