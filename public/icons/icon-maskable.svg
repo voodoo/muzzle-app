@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Muzzle">
+  <!-- Maskable: keep the glyph within the safe zone (~80% center). -->
+  <rect width="512" height="512" fill="#0b0f17"/>
+  <g transform="translate(256 244) scale(0.78)" fill="none" stroke="#5eead4" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-44" y="-128" width="88" height="170" rx="44"/>
+    <path d="M-104 -8 a104 104 0 0 0 208 0"/>
+    <line x1="0" y1="96" x2="0" y2="150"/>
+  </g>
+</svg>
