@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Muzzle">
+  <rect width="512" height="512" rx="112" fill="#0b0f17"/>
+  <g transform="translate(256 248)" fill="none" stroke="#5eead4" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-44" y="-128" width="88" height="170" rx="44"/>
+    <path d="M-104 -8 a104 104 0 0 0 208 0"/>
+    <line x1="0" y1="96" x2="0" y2="150"/>
+  </g>
+  <g stroke="#2dd4bf" stroke-width="16" stroke-linecap="round" opacity="0.85">
+    <path d="M96 256 q-34 0 -34 34"/>
+    <path d="M416 256 q34 0 34 34"/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+import { pwaInfo } from "virtual:pwa-info";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Muzzle — talk to your A.I., not your neighbor",
+  description = "Whisper to your AI in public. Muzzle enhances quiet speech into clear input and can mask your words from bystanders.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0f17" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Muzzle" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon.svg" />
+    <title>{title}</title>
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+  </head>
+  <body>
+    <slot />
+    <script>
+      import { registerSW } from "virtual:pwa-register";
+      // Cache the app shell so Muzzle launches offline. The live AI loop still
+      // needs the network — we never serve cached audio or AI replies.
+      registerSW({ immediate: true });
+    </script>
+  </body>
+</html>

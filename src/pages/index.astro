@@ -1,0 +1,19 @@
+---
+// Static app shell (prerendered + cached by the service worker for offline
+// launch). The interactive surface is a single client-only React island
+// because it touches AudioContext / getUserMedia and cannot server-render.
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import MuzzleApp from "../components/MuzzleApp";
+---
+
+<Layout>
+  <main>
+    <MuzzleApp client:only="react">
+      <div slot="fallback" class="grid h-[100dvh] place-items-center text-slate-500">
+        Loading Muzzle…
+      </div>
+    </MuzzleApp>
+  </main>
+</Layout>
