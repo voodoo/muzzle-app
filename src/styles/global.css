@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-veil-bg: #0b0f17;
+  --color-veil-panel: #131a26;
+  --color-veil-edge: #1f2a3a;
+  --color-veil-accent: #5eead4;
+  --color-veil-accent-dim: #2dd4bf;
+  --color-veil-danger: #f87171;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--color-veil-bg);
+  color: #e5edf5;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respect reduced-motion: the talk button pulse is decorative. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visually-hidden helper for screen-reader-only labels. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
